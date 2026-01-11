@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart Slider</title>
+    <style>
+        input {
+            font-size: 20px;
+            margin: 20px;
+            width: 400px;
+        }
+
+        .piechart {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-image: conic-gradient(#000 var(--percentage), #ccc 0);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Slider</h1>
+
+    <input type="range" id="inputHandler" value="25" />
+
+    <div class="piechart" style="--percentage:25%"></div>
+
+    <!-- <script src="appjs.js"></script> -->
+</body>
+<script>
+    const pieChart = document.querySelector(".piechart")
+
+    document.querySelector("#inputHandler"), addEventListener("input", (e) => {
+        pieChart.style = `--percentage:${e.target.value}%;`
+    });
+</script>
+
+</html>
